@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        #heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #central{
+            display: inline-block;
+            border-radius: 5%;
+            margin: 40px;
+            padding: 20px;
+            background-color: burlywood;
+        }
+        #fcentral{
+            display: flex;
+            justify-content: center;
+        }
+        #dice{
+            display: flex;
+            justify-content: center;
+        }
+        #dice1{
+            margin: 20px;
+            height: 100px;
+            width: 100px;
+            background-image: url("diceflip.png");
+            background-size: cover;
+            border: 0;
+        }
+        #dice2{
+            margin: 20px;
+            height: 100px;
+            width: 100px;
+            background-image: url("diceflip.png");
+            background-size: cover;
+            border: 0;
+        }
+        #roll{
+            display: flex;
+            justify-content: center;
+        }
+        #roll1{
+            font-weight: bold;
+            font-size: large;
+            background-color: gold;
+            border: 0ch;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        #fmsg{
+            display: flex;
+            justify-content: center;
+        }
+        #msg{
+            background-color: #081b31;
+            color: white;
+            font-size: 1.5rem;
+            display: inline-block;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+    </style>
+    <script>
+        function rolls(){
+            const dic1=Math.floor(Math.random()*6);
+            const dic2=Math.floor(Math.random()*6);
+            let dice1=document.getElementById("dice1");
+            if(dic1==0){
+                dice1.style.backgroundImage="url('dice1t.png')";
+            }
+            else if (dic1==1) {
+                dice1.style.backgroundImage="url('dice2t.png')";
+            }
+            else if (dic1==2) {
+                dice1.style.backgroundImage="url('dice3t.png')";
+            }
+            else if (dic1==3) {
+                dice1.style.backgroundImage="url('dice4t.png')";
+            }
+            else if (dic1==4) {
+                dice1.style.backgroundImage="url('dice5t.png')";
+            }
+            else if (dic1==5) {
+                dice1.style.backgroundImage="url('dice6t.png')";
+            }
+            let dice2=document.getElementById("dice2");
+            if(dic2==0){
+                dice2.style.backgroundImage="url('dice1t.png')";
+            }
+            else if (dic2==1) {
+                dice2.style.backgroundImage="url('dice2t.png')";
+            }
+            else if (dic2==2) {
+                dice2.style.backgroundImage="url('dice3t.png')";
+            }
+            else if (dic2==3) {
+                dice2.style.backgroundImage="url('dice4t.png')";
+            }
+            else if (dic2==4) {
+                dice2.style.backgroundImage="url('dice5t.png')";
+            }
+            else if (dic2==5) {
+                dice2.style.backgroundImage="url('dice6t.png')";
+            }
+            const msg=document.getElementById("msg");
+            if(dic1!=dic2){
+                msg.style.backgroundColor="red";
+                msg.innerHTML="Better Luck next time";
+            }
+            else{
+                msg.style.backgroundColor="green";
+                msg.innerHTML="Congratulations you won the game";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="heading">
+    <h1>Roll the dice to win</h1>
+    <img src="coins-16614.png" height="100px">
+    </div>
+    <div id="fcentral">
+    <div id="central">
+    <div id="dice">
+        <div id="dice1"></div>
+        <div id="dice2"></div>
+    </div>
+    <div id="roll">
+        <button id="roll1" onclick="rolls()">Click here</button>
+    </div>
+    </div>
+    </div>
+    <div id="fmsg">
+    <div id="msg">Play Now</div>
+    </div>
+</body>
+</html>
